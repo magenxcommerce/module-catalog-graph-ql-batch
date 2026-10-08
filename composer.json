@@ -1,0 +1,29 @@
+{
+    "name": "magenxcommerce/module-catalog-graph-ql-batch",
+    "description": "Removes per-product database lookups from Magento's GraphQL product lists: pre-loads catalog rule and tier prices once per product collection, and resolves ProductInterface.rating_summary and review_count with one query per list.",
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": "~8.3.0||~8.4.0||~8.5.0",
+        "magento/framework": "*",
+        "magento/module-catalog": "*",
+        "magento/module-catalog-graph-ql": "*",
+        "magento/module-catalog-rule": "*",
+        "magento/module-customer": "*",
+        "magento/module-graph-ql": "*",
+        "magento/module-review": "*",
+        "magento/module-review-graph-ql": "*",
+        "magento/module-store": "*"
+    },
+    "type": "magento2-module",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magenx\\CatalogGraphQlBatch\\": ""
+        }
+    }
+}

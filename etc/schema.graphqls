@@ -1,0 +1,8 @@
+# Copyright © Magenx. All rights reserved.
+
+# Same fields and types as Magento_ReviewGraphQl; only the resolvers change,
+# to batch resolvers that answer a whole product list with one query.
+interface ProductInterface {
+    rating_summary: Float! @doc(description: "The average of all the ratings given to the product.") @resolver(class: "Magenx\\CatalogGraphQlBatch\\Model\\Resolver\\Product\\RatingSummary")
+    review_count: Int! @doc(description: "The total count of all the reviews given to the product.") @resolver(class: "Magenx\\CatalogGraphQlBatch\\Model\\Resolver\\Product\\ReviewCount")
+}
