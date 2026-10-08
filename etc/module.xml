@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magenx. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Magenx_CatalogGraphQlBatch">
+        <sequence>
+            <module name="Magento_CatalogGraphQl"/>
+            <module name="Magento_CatalogRule"/>
+            <module name="Magento_Review"/>
+            <!-- Loaded after ReviewGraphQl so schema.graphqls replaces its resolvers. -->
+            <module name="Magento_ReviewGraphQl"/>
+        </sequence>
+    </module>
+</config>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magenx. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- The concrete post-processor runs for both GraphQL product loaders: the
+         `products` query (through CompositeCollectionPostProcessor) and the
+         related/upsell/cross-sell lists (DataProvider\Product::getList()). -->
+    <type name="Magento\CatalogGraphQl\Model\Resolver\Products\DataProvider\Product\CollectionPostProcessor">
+        <plugin name="magenx_catalog_graphql_batch_preload_prices"
+                type="Magenx\CatalogGraphQlBatch\Plugin\PreloadProductPrices"/>
+    </type>
+</config>
